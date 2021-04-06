@@ -77,14 +77,30 @@ const SignIn = (props) => {
               <TouchableOpacity style={styles._login_btn}>
                 <Text style={styles._login_btn_text}>Sign In</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles._facebook_btn}>
-                <View style={styles._facebook_btn_icon}>
+
+              <TouchableOpacity style={styles._facebook_button}>
+                <View style={styles._facebook_button_icon}>
                   <FontAwesome name="facebook-f" size={24} color="white" />
                 </View>
-                <Text style={styles._facebook_btn_text}>
-                  Sign In with Facebook
-                </Text>
+                <Text style={styles._login_btn_text}>Sign In with Facebook</Text>
               </TouchableOpacity>
+
+              <TouchableOpacity style={styles._google_button}>
+                <View style={styles._google_button_icon}>
+                  <Image
+                    source={require("./../../img/google.png")}
+                    style={styles._google_logo}
+                  />
+                </View>
+                <Text style={styles._login_btn_text}>Sign In with Google</Text>
+              </TouchableOpacity>
+
+              <View style={styles._dont_account_main}>
+                <Text style={styles._dont_account_main_heading}>Don't have an account? </Text>
+                <TouchableOpacity>
+                  <Text style={styles._singUp_btn}>Sign Up</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -147,26 +163,62 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     marginTop: 10,
   },
-  _facebook_btn: {
+  _facebook_button: {
     backgroundColor: "#F7931E",
     padding: 5,
-    borderRadius: 5,
-    width: "100%",
     marginTop: 20,
     flexDirection: "row",
+    justifyContent: "center",
     alignItems: "center",
-    alignSelf:"center"
+    borderRadius: 5
+
   },
-  _facebook_btn_text: {
-    textAlign: "center",
-  },
-  _facebook_btn_icon: {
-    backgroundColor: "#0053BF",
-    width: 35,
-    height: 35,
-    borderRadius: 35 / 2,
+  _facebook_button_icon: {
+    width: 36,
+    height: 36,
+    backgroundColor: "#4A7AFF",
+    borderRadius: 36 / 2,
     alignItems: "center",
     justifyContent: "center",
+    marginRight: 10
   },
+  _google_button: {
+    backgroundColor: "#F7931E",
+    padding: 5,
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5
+
+  },
+  _google_button_icon: {
+    width: 36,
+    height: 36,
+    backgroundColor: "transparent",
+    borderRadius: 36 / 2,
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 10
+  },
+  _google_logo: {
+    width: 28,
+    height: 28
+  },
+  _dont_account_main: {
+    alignSelf: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    marginTop: 50
+  },
+  _dont_account_main_heading: {
+    color: "white",
+    fontSize: 18
+  },
+  _singUp_btn: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold"
+  }
 });
 export default SignIn;
