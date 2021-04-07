@@ -13,7 +13,8 @@ import {
   CreditCard,
   OrderConfirmed,
   PokemonForMember,
-  OrderSummary
+  OrderSummary,
+  MyCart
 } from "./../Screens/index";
 function Navigation() {
   const Stack = createStackNavigator();
@@ -75,9 +76,14 @@ function Navigation() {
           component={PokemonForMember}
           options={{ headerShown: false }}
         /> */}
-         <Stack.Screen
+         {/* <Stack.Screen
           name="OrderSummary"
           component={OrderSummary}
+          options={{ headerShown: false }}
+        /> */}
+           <Stack.Screen
+          name="MyCart"
+          component={MyCart}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
