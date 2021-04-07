@@ -13,7 +13,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const Pokemon = (props) => {
+const PokemonForMember = (props) => {
   const [dimensions, setDimensions] = useState({ window, screen });
   const onChange = ({ window, screen }) => {
     setDimensions({ window, screen });
@@ -115,6 +115,12 @@ const Pokemon = (props) => {
             </View>
           </View>
         </ScrollView>
+        <View style={styles._Add_button_main}>
+            <TouchableOpacity style={styles._Add_button}>
+            <Ionicons name="md-add" size={24} color="#008080" />
+            </TouchableOpacity>
+            <Text style={styles._Add_button_text}>Add products</Text>
+        </View>
       </ImageBackground>
     </View>
   );
@@ -175,5 +181,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#7AC6C6",
     borderRadius: 5,
   },
+  _Add_button_main:{
+      bottom:30,
+      alignSelf:"center",
+      alignItems:"center",
+      justifyContent:"center"
+  },
+  _Add_button:{
+      backgroundColor:"#F7931E",
+      width:54,
+      height:54,
+      borderRadius:54/2,
+      alignItems:"center",
+      justifyContent:"center"
+  },
+  _Add_button_text:{
+      color:"white"
+  }
 });
-export default Pokemon;
+export default PokemonForMember;

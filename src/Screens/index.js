@@ -2,11 +2,25 @@ import SplashScreen from './SplashScreen/SplashScreen';
 import SignIn from './SignIn/SignIn';
 import SignUp from './SignUp/SignUp';
 import SelectCategory from "./SelectCategory/SelectCategory";
-import Pokemon from './Pokemon/Pokemon'
+import Pokemon from './Pokemon/Pokemon';
+import Packs from './Packs/Packs';
+import PokemanSword from './PokemanSword/PokemanSword';
+import Checkout from './Checkout/Checkout';
+import CreditCard from './CreditCard/CreditCard';
+import OrderConfirmed from './OrderConfirmed/OrderConfirmed';
+import PokemonForMember from './PokemonForMember/PokemonForMember';
+import OrderSummary from './OrderSummary/OrderSummary'
 export{
     SplashScreen,
     SignIn,
     SignUp,
     SelectCategory,
-    Pokemon
+    Pokemon,
+    Packs,
+    PokemanSword,
+    Checkout,
+    CreditCard,
+    OrderConfirmed,
+    PokemonForMember,
+    OrderSummary
 }

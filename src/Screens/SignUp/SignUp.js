@@ -12,7 +12,7 @@ import {
     TextInput,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import { RadioButton } from 'react-native-paper';
+// import { RadioButton } from 'react-native-paper';
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 const SignUp = (props) => {
