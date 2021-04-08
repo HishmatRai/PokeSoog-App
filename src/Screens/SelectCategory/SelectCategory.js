@@ -52,7 +52,7 @@ const SelectCategory = (props) => {
                                     />
                                 </TouchableOpacity>
                                 <Text style={styles.select_heading}>Pokemon</Text>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => props.navigation.navigate("Membership")}>
                                     <Image
                                         source={require("./../../img/Drangon_Ball.png")}
                                         style={styles.select_pokemon}

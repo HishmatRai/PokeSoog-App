@@ -56,7 +56,7 @@ const PlaceBid = (props) => {
               {/* Header */}
               <View style={styles._header_main}>
                 <View style={styles._header_column}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => props.navigation.goBack()}>
                     <Ionicons
                       name="chevron-back-outline"
                       size={24}
@@ -118,7 +118,7 @@ const PlaceBid = (props) => {
                   </View>
                   {/* bbutton */}
                   <View style={{ marginTop: 20, marginBottom: 30 }}>
-                    <TouchableOpacity style={styles._pay_button}>
+                    <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("ReviewBid")}>
                       <Text style={styles._pay_button_text}>Place Bid</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._pay_button}>

@@ -43,7 +43,7 @@ const PokemonForMember = (props) => {
             <View style={{ margin: 20 }}>
               {/* Header */}
               <View style={styles._header_main}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.goBack()}>
                   <Ionicons
                     name="chevron-back-outline"
                     size={24}
@@ -56,7 +56,7 @@ const PokemonForMember = (props) => {
               {/* Card  */}
               <View style={styles._Card_main}>
                 <View style={styles._card}>
-                  <TouchableOpacity style={styles._card_column}>
+                  <TouchableOpacity style={styles._card_column} onPress={() => props.navigation.navigate("SellCards")}>
                     <Image
                       source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                       style={styles._card_image}
@@ -103,7 +103,7 @@ const PokemonForMember = (props) => {
                   <Text style={styles._card_heading}>Card sell</Text>
                 </View>
                 <View style={styles._card}>
-                  <TouchableOpacity style={styles._card_column}>
+                  <TouchableOpacity style={styles._card_column} onPress={() => props.navigation.navigate("Auction")}>
                     <Image
                       source={require("./../../img/legal.png")}
                       style={styles._card_image}
@@ -116,9 +116,9 @@ const PokemonForMember = (props) => {
           </View>
         </ScrollView>
         <View style={styles._Add_button_main}>
-            <TouchableOpacity style={styles._Add_button}>
+            <TouchableOpacity style={styles._Add_button} onPress={() => props.navigation.navigate("AddProduct")}>
             <Ionicons name="md-add" size={24} color="#008080" />
-            </TouchableOpacity>
+            </TouchableOpacity >
             <Text style={styles._Add_button_text}>Add products</Text>
         </View>
       </ImageBackground>

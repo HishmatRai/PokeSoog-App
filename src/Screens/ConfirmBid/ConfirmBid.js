@@ -55,7 +55,7 @@ const ConfirmBid = (props) => {
               {/* Header */}
               <View style={styles._header_main}>
                 <View style={styles._header_column}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => props.navigation.goBack()}>
                     <Ionicons
                       name="chevron-back-outline"
                       size={24}
@@ -101,7 +101,7 @@ const ConfirmBid = (props) => {
                 </Text>
               </View>
               {/* bbutton */}
-              <TouchableOpacity style={styles._pay_button}>
+              <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("PokemonForMember")}>
                 <Text style={styles._pay_button_text}>Confirm Bid</Text>
               </TouchableOpacity>
             </View>

@@ -125,7 +125,32 @@ const OrderSummary = (props) => {
                   <Text style={styles._Quantity}>$5.00</Text>
                 </View>
               </View>
-
+              <View style={{ width: "90%", alignSelf: "center", marginTop: 10 }}>
+                <Ionicons name="checkmark-sharp" size={24} color="#FE9000" />
+                <View style={styles._steps_main}>
+                  <View style={styles._steps}>
+                    <Text style={styles._steps_color}>1</Text>
+                  </View>
+                  <View style={styles._dot_main}>
+                    <Text style={styles._dot_text}> ....</Text>
+                  </View>
+                  <View style={styles._steps}>
+                    <Text style={styles._steps_color}>2</Text>
+                  </View>
+                  <View style={styles._dot_main}>
+                    <Text style={styles._dot_text}> ....</Text>
+                  </View>
+                  <View style={styles._steps}>
+                    <Text style={styles._steps_color}>3</Text>
+                  </View>
+                  <View style={styles._dot_main}>
+                    <Text style={styles._dot_text}> ....</Text>
+                  </View>
+                  <View style={styles._steps}>
+                    <Text style={styles._steps_color}>4</Text>
+                  </View>
+                </View>
+              </View>
               <Text style={{ color: "white", fontSize: 18, marginTop: 30 }}>
                 1. Shipping Details
               </Text>
@@ -181,7 +206,7 @@ const OrderSummary = (props) => {
                     color: "black",
                   }}
                   dropDownStyle={{ backgroundColor: "#008080" }}
-                  // onChangeItem={(item) => setSelectValue(item.value)}
+                // onChangeItem={(item) => setSelectValue(item.value)}
                 />
               </View>
 
@@ -208,7 +233,7 @@ const OrderSummary = (props) => {
                     color: "black",
                   }}
                   dropDownStyle={{ backgroundColor: "#008080" }}
-                  // onChangeItem={(item) => setSelectValue(item.value)}
+                // onChangeItem={(item) => setSelectValue(item.value)}
                 />
               </View>
               <View style={styles._first_last_name}>
@@ -343,5 +368,35 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: "47%",
   },
+  _steps_main: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop:10
+  },
+  _steps: {
+    width: "10%",
+    backgroundColor: "#FE9000",
+    width: 30,
+    height: 30,
+    borderRadius: 30 / 2,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  _steps_color: {
+    color: "white",
+    fontSize: 12,
+    fontWeight: "bold"
+  },
+  _dot_main: {
+    width: "20%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  _dot_text: {
+    color: "white",
+    fontSize: 30,
+    marginTop: -19
+  }
 });
 export default OrderSummary;

@@ -68,7 +68,7 @@ function Navigation() {
           component={Checkout}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
+       <Stack.Screen
           name="CreditCard"
           component={CreditCard}
           options={{ headerShown: false }}
@@ -82,7 +82,7 @@ function Navigation() {
           name="PokemonForMember"
           component={PokemonForMember}
           options={{ headerShown: false }}
-        />
+        />  
         <Stack.Screen
           name="OrderSummary"
           component={OrderSummary}
@@ -92,8 +92,8 @@ function Navigation() {
           name="MyCart"
           component={MyCart}
           options={{ headerShown: false }}
-        />
-        <Stack.Screen
+      />
+       <Stack.Screen
           name="Membership"
           component={Membership}
           options={{ headerShown: false }}
@@ -122,12 +122,12 @@ function Navigation() {
           name="SellCards"
           component={SellCards}
           options={{ headerShown: false }}
-        />
+        /> 
         <Stack.Screen
           name="Auction"
           component={Auction}
           options={{ headerShown: false }}
-        />
+        /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -12,8 +12,8 @@ import {
 } from "react-native";
 import {
   Ionicons,
-  MaterialCommunityIcons,
-  AntDesign,
+  Fontisto,
+  AntDesign
 } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
 import BottomSheet from "./../../Component/BottomSheet/BottomSheet";
@@ -69,7 +69,7 @@ const Auction = (props) => {
               {/* Header */}
               <View style={styles._header_main}>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => props.navigation.goBack()}>
                     <Ionicons
                       name="chevron-back-outline"
                       size={24}
@@ -83,25 +83,25 @@ const Auction = (props) => {
                 </TouchableOpacity>
               </View>
               {/* Slier */}
-                  <ScrollView horizontal={true}>
-              <View style={styles._slider_main}>
-                <View style={styles._slider_card}>
-                  <ImageBackground
-                    source={require("./../../img/tcg-design-a-deck-169-en.jpg")}
-                    style={styles._image2}
-                  >
-                  <Text style={styles._per_off}>30% off </Text>
-                  </ImageBackground>
+              <ScrollView horizontal={true}>
+                <View style={styles._slider_main}>
+                  <View style={styles._slider_card}>
+                    <ImageBackground
+                      source={require("./../../img/tcg-design-a-deck-169-en.jpg")}
+                      style={styles._image2}
+                    >
+                      <Text style={styles._per_off}>30% off </Text>
+                    </ImageBackground>
+                  </View>
+                  <View style={styles._slider_card}>
+                    <ImageBackground
+                      source={require("./../../img/tcg-design-a-deck-169-en.jpg")}
+                      style={styles._image2}
+                    >
+                      <Text style={styles._per_off}>50% off </Text>
+                    </ImageBackground>
+                  </View>
                 </View>
-                <View style={styles._slider_card}>
-                  <ImageBackground
-                    source={require("./../../img/tcg-design-a-deck-169-en.jpg")}
-                    style={styles._image2}
-                  >
-                    <Text style={styles._per_off}>50% off </Text>
-                  </ImageBackground>
-                </View>
-              </View>
               </ScrollView>
               {/*  */}
               <Text style={{ color: "white", fontSize: 20, marginTop: 30 }}>
@@ -117,26 +117,22 @@ const Auction = (props) => {
                         style={styles.card_img}
                       />
                       <Text style={styles._card_Des}>{v.des}</Text>
-                      <Text style={styles._card_price}>{v.price}</Text>
-                      {/* <<<<<<<< Remember >>>>>>>>> */}
-                      <View style={styles._remember_main}>
-                        {remember ? (
-                          <MaterialCommunityIcons
-                            name="checkbox-multiple-marked-outline"
-                            size={14}
-                            color="white"
-                            onPress={() => setRemember(!remember)}
-                          />
-                        ) : (
-                          <MaterialCommunityIcons
-                            name="checkbox-multiple-marked"
-                            size={14}
-                            color="white"
-                            onPress={() => setRemember(!remember)}
-                          />
-                        )}
-                        <Text style={styles._remember_text}>Compare</Text>
+                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center" }}>
+                        <Image
+                          source={require("./../../img/action.png")}
+                          style={styles.action_img}
+                        />
+                        <Text style={styles._card_price}>16 Bid</Text>
+                        <Text style={styles._card_price}>{v.price}</Text>
                       </View>
+
+                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center",marginTop:5 }}>
+                      <Fontisto name="date" size={15} color="white" />
+                      <Text style={styles._card_price}>23 h 35min</Text>
+                        </View>
+                        <TouchableOpacity style={styles._bid_button} onPress={() => props.navigation.navigate("PlaceBid")}>
+                          <Text style={styles._bid_button_text}>Bid Now</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles._card}>
                       <Image
@@ -144,26 +140,23 @@ const Auction = (props) => {
                         style={styles.card_img}
                       />
                       <Text style={styles._card_Des}>{v.des}</Text>
-                      <Text style={styles._card_price}>{v.price}</Text>
-                      {/* <<<<<<<< Remember >>>>>>>>> */}
-                      <View style={styles._remember_main}>
-                        {remember ? (
-                          <MaterialCommunityIcons
-                            name="checkbox-multiple-marked-outline"
-                            size={14}
-                            color="white"
-                            onPress={() => setRemember(!remember)}
-                          />
-                        ) : (
-                          <MaterialCommunityIcons
-                            name="checkbox-multiple-marked"
-                            size={14}
-                            color="white"
-                            onPress={() => setRemember(!remember)}
-                          />
-                        )}
-                        <Text style={styles._remember_text}>Compare</Text>
+                     
+                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center" }}>
+                        <Image
+                          source={require("./../../img/action.png")}
+                          style={styles.action_img}
+                        />
+                        <Text style={styles._card_price}>16 Bid</Text>
+                        <Text style={styles._card_price}>{v.price}</Text>
                       </View>
+
+                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center",marginTop:5 }}>
+                      <Fontisto name="date" size={15} color="white" />
+                      <Text style={styles._card_price}>23 h 35min</Text>
+                        </View>
+                        <TouchableOpacity style={styles._bid_button} onPress={() => props.navigation.navigate("PlaceBid")}>
+                          <Text style={styles._bid_button_text}>Bid Now</Text>
+                        </TouchableOpacity>
                     </View>
                   </View>
                 );
@@ -268,7 +261,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "bold",
     textAlign: "center",
-    marginTop: 5,
+    // marginTop: 5,
   },
   _remember_main: {
     flexDirection: "row",
@@ -283,28 +276,47 @@ const styles = StyleSheet.create({
   },
   _slider_main: {
     marginTop: 20,
-    flexDirection:"row"
+    flexDirection: "row"
   },
   _slider_card: {
     backgroundColor: "red",
     width: 250,
     height: 128,
-    marginRight:20
+    marginRight: 20
   },
   _image2: {
     flex: 1,
     resizeMode: "cover",
     height: 128,
   },
-  _per_off:{
-      backgroundColor:"#004545",
-      width:"40%",
-      color:"white",
-      fontSize:15,
-      fontWeight:"bold",
-      textAlign:"center",
-      paddingTop:10,
-      paddingBottom:10
+  _per_off: {
+    backgroundColor: "#004545",
+    width: "40%",
+    color: "white",
+    fontSize: 15,
+    fontWeight: "bold",
+    textAlign: "center",
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  action_img: {
+    width: 11,
+    height: 11
+  },
+  _bid_button:{
+    backgroundColor:"#F7931E",
+    width:"60%",
+    alignSelf:"center",
+    marginTop:10,
+    borderColor:"#707070",
+    borderWidth:1
+  },
+  _bid_button_text:{
+    color:"white",
+    textAlign:"center",
+    fontSize:12,
+    paddingBottom:5,
+    paddingTop:5
   }
 });
 export default Auction;

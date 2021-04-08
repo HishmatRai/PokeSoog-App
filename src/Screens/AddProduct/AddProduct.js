@@ -65,7 +65,7 @@ const AddProduct = (props) => {
             <View style={{ margin: 20 }}>
               {/* Header */}
               <View style={styles._header_main}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.goBack()}>
                   <Ionicons
                     name="chevron-back-outline"
                     size={24}
@@ -147,7 +147,7 @@ const AddProduct = (props) => {
               />
 
               {/* bbutton */}
-              <TouchableOpacity style={styles._pay_button}>
+              <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("PokemonForMember")}>
                 <Text style={styles._pay_button_text}>Save</Text>
               </TouchableOpacity>
             </View>
