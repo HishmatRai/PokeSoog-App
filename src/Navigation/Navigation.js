@@ -22,6 +22,8 @@ import {
   PlaceBid,
   SellCards,
   Auction,
+  DragonBall,
+  SubscriptionDoneSuccessfully
 } from "./../Screens/index";
 function Navigation() {
   const Stack = createStackNavigator();
@@ -116,7 +118,8 @@ function Navigation() {
         <Stack.Screen
           name="PlaceBid"
           component={PlaceBid}
-          options={{ headerShown: false }}
+          options={{ headerShown: false }}xd
+
         />
         <Stack.Screen
           name="SellCards"
@@ -124,8 +127,18 @@ function Navigation() {
           options={{ headerShown: false }}
         /> 
         <Stack.Screen
+          name="DragonBall"
+          component={DragonBall}
+          options={{ headerShown: false }}
+        /> 
+       <Stack.Screen
           name="Auction"
           component={Auction}
+          options={{ headerShown: false }}
+        /> 
+         <Stack.Screen
+          name="SubscriptionDoneSuccessfully"
+          component={SubscriptionDoneSuccessfully}
           options={{ headerShown: false }}
         /> 
       </Stack.Navigator>

@@ -17,7 +17,9 @@ import ConfirmBid from './ConfirmBid/ConfirmBid';
 import ReviewBid from './ReviewBid/ReviewBid';
 import PlaceBid from './PlaceBid/PlaceBid';
 import SellCards from './SellCards/SellCards';
-import Auction from './Auction/Auction'
+import Auction from './Auction/Auction';
+import DragonBall from './DragonBall/DragonBall';
+import SubscriptionDoneSuccessfully from "./SubscriptionDoneSuccessfully/SubscriptionDoneSuccessfully"
 export{
     SplashScreen,
     SignIn,
@@ -38,5 +40,7 @@ export{
     ReviewBid,
     PlaceBid,
     SellCards,
-    Auction
+    Auction,
+    DragonBall,
+    SubscriptionDoneSuccessfully
 }

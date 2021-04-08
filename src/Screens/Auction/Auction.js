@@ -279,7 +279,6 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   _slider_card: {
-    backgroundColor: "red",
     width: 250,
     height: 128,
     marginRight: 20

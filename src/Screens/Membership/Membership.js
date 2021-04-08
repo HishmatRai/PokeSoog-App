@@ -100,7 +100,7 @@ const Membership = (props) => {
             </View>
 
             {/* bbutton */}
-            <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("PokemonForMember")}>
+            <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("SubscriptionDoneSuccessfully")}>
               <Text style={styles._pay_button_text}>Subscribe</Text>
             </TouchableOpacity>
           </View>

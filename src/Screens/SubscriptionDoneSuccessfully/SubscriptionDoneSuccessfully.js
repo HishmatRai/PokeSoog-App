@@ -10,10 +10,10 @@ import {
     Text,
     Dimensions,
 } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const SelectCategory = (props) => {
+const SubscriptionDoneSuccessfully = (props) => {
     const [dimensions, setDimensions] = useState({ window, screen });
     const onChange = ({ window, screen }) => {
         setDimensions({ window, screen });
@@ -41,26 +41,24 @@ const SelectCategory = (props) => {
                 <ScrollView>
                     <View>
                         <View style={{ margin: 20 }}>
-                            <TouchableOpacity>
-                                <Feather name="menu" size={24} color="white" />
-                            </TouchableOpacity>
-                            <View style={styles.select_main}>
-                                <TouchableOpacity onPress={() => props.navigation.navigate("Pokemon")}>
-                                    <Image
-                                        source={require("./../../img/select_pokemon.png")}
-                                        style={styles.select_pokemon}
+                            {/* Header */}
+                            <View style={styles._header_main}>
+                                <TouchableOpacity onPress={() => props.navigation.goBack()}>
+                                    <Ionicons
+                                        name="chevron-back-outline"
+                                        size={24}
+                                        color="white"
                                     />
                                 </TouchableOpacity>
-                                <Text style={styles.select_heading}>Pokemon</Text>
-                                <TouchableOpacity onPress={() => props.navigation.navigate("DragonBall")}>
-                                    <Image
-                                        source={require("./../../img/Drangon_Ball.png")}
-                                        style={styles.select_pokemon}
-                                    />
-                                </TouchableOpacity>
-                                <Text style={styles.select_heading}>Drangon Ball</Text>
+                                <Text style={styles._header_heading}>Done Successfully</Text>
                             </View>
+                            <View style={{ width: "100%" }}>
 
+                                <Image
+                                    source={require("./../../img/sucess.png")}
+                                    style={styles.select_pokemon}
+                                />
+                            </View>
                         </View>
                     </View>
                 </ScrollView>
@@ -79,22 +77,24 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         height: "100%",
     },
-    select_main: {
-        alignSelf: "center",
-        paddingTop: 50
+    _image2: {
+        flex: 1,
+        resizeMode: "cover",
+        height: 400,
+        width: 150,
+    },
+    _header_main: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    _header_heading: {
+        color: "white",
+        fontSize: 20,
+        marginLeft: 5,
     },
     select_pokemon: {
-        width: 201,
-        height: 201,
-        borderRadius: 200 / 2,
-        marginTop: 10
-    },
-    select_heading: {
-        color: "white",
-        fontSize: 34,
-        textAlign: "center",
-        marginTop: 10
+        width: "100%",
+        height: 500
     }
-
 });
-export default SelectCategory;
+export default SubscriptionDoneSuccessfully;

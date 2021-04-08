@@ -27,6 +27,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "com.Pokesoog.Pokesoog",
+      "versionCode": 1
     }
   }
 }
