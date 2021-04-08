@@ -45,7 +45,7 @@ const SelectCategory = (props) => {
                                 <Feather name="menu" size={24} color="white" />
                             </TouchableOpacity>
                             <View style={styles.select_main}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => props.navigation.navigate("Pokemon")}>
                                     <Image
                                         source={require("./../../img/select_pokemon.png")}
                                         style={styles.select_pokemon}

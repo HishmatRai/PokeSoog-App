@@ -10,7 +10,14 @@ import CreditCard from './CreditCard/CreditCard';
 import OrderConfirmed from './OrderConfirmed/OrderConfirmed';
 import PokemonForMember from './PokemonForMember/PokemonForMember';
 import OrderSummary from './OrderSummary/OrderSummary';
-import MyCart from './MyCart/MyCart'
+import MyCart from './MyCart/MyCart';
+import Membership from './Membership/Membership';
+import AddProduct from './AddProduct/AddProduct';
+import ConfirmBid from './ConfirmBid/ConfirmBid';
+import ReviewBid from './ReviewBid/ReviewBid';
+import PlaceBid from './PlaceBid/PlaceBid';
+import SellCards from './SellCards/SellCards';
+import Auction from './Auction/Auction'
 export{
     SplashScreen,
     SignIn,
@@ -24,5 +31,12 @@ export{
     OrderConfirmed,
     PokemonForMember,
     OrderSummary,
-    MyCart
+    MyCart,
+    Membership,
+    AddProduct,
+    ConfirmBid,
+    ReviewBid,
+    PlaceBid,
+    SellCards,
+    Auction
 }

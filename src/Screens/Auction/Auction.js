@@ -19,7 +19,7 @@ import RBSheet from "react-native-raw-bottom-sheet";
 import BottomSheet from "./../../Component/BottomSheet/BottomSheet";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const Packs = (props) => {
+const Auction = (props) => {
   const [dimensions, setDimensions] = useState({ window, screen });
   const [remember, setRemember] = useState(false);
   const onChange = ({ window, screen }) => {
@@ -68,44 +68,50 @@ const Packs = (props) => {
             <View style={{ margin: 20 }}>
               {/* Header */}
               <View style={styles._header_main}>
-                <TouchableOpacity onPress={() => props.navigation.goBack()}>
-                  <Ionicons
-                    name="chevron-back-outline"
-                    size={24}
-                    color="white"
-                  />
-                </TouchableOpacity>
-                <Text style={styles._header_heading}>Packs</Text>
-              </View>
-
-              {/* Sub Header  */}
-              <View style={styles._sub_header_main}>
-                <View style={styles._sub_header__first_column}>
-                  <TouchableOpacity style={styles._ative_tab_show}>
-                    <Text style={styles._ative_tab_number}>1</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={styles._tab_two}>
-                    <Text style={styles._tab_two_number}>2</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={styles._next_button}>
-                    <Text style={styles._next_button_text}>Next</Text>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <TouchableOpacity>
                     <Ionicons
-                      name="chevron-forward-outline"
-                      size={14}
-                      color="#F7931E"
+                      name="chevron-back-outline"
+                      size={24}
+                      color="white"
                     />
                   </TouchableOpacity>
+                  <Text style={styles._header_heading}>Auction</Text>
                 </View>
                 <TouchableOpacity onPress={() => this.RBSheet.open()}>
                   <Ionicons name="filter-sharp" size={24} color="white" />
                 </TouchableOpacity>
               </View>
-
+              {/* Slier */}
+                  <ScrollView horizontal={true}>
+              <View style={styles._slider_main}>
+                <View style={styles._slider_card}>
+                  <ImageBackground
+                    source={require("./../../img/tcg-design-a-deck-169-en.jpg")}
+                    style={styles._image2}
+                  >
+                  <Text style={styles._per_off}>30% off </Text>
+                  </ImageBackground>
+                </View>
+                <View style={styles._slider_card}>
+                  <ImageBackground
+                    source={require("./../../img/tcg-design-a-deck-169-en.jpg")}
+                    style={styles._image2}
+                  >
+                    <Text style={styles._per_off}>50% off </Text>
+                  </ImageBackground>
+                </View>
+              </View>
+              </ScrollView>
+              {/*  */}
+              <Text style={{ color: "white", fontSize: 20, marginTop: 30 }}>
+                Featured
+              </Text>
               {/* Card  */}
               {CardData.map((v, i) => {
                 return (
                   <View style={styles._card_main}>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    <View style={styles._card}>
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}
@@ -131,8 +137,8 @@ const Packs = (props) => {
                         )}
                         <Text style={styles._remember_text}>Compare</Text>
                       </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    </View>
+                    <View style={styles._card}>
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}
@@ -158,7 +164,7 @@ const Packs = (props) => {
                         )}
                         <Text style={styles._remember_text}>Compare</Text>
                       </View>
-                    </TouchableOpacity>
+                    </View>
                   </View>
                 );
               })}
@@ -211,6 +217,11 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     height: "100%",
   },
+  _image: {
+    flex: 1,
+    resizeMode: "cover",
+    height: "100%",
+  },
   _image2: {
     flex: 1,
     resizeMode: "cover",
@@ -219,66 +230,19 @@ const styles = StyleSheet.create({
   _header_main: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
   },
   _header_heading: {
     color: "white",
     fontSize: 20,
     marginLeft: 5,
   },
-  _sub_header_main: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginTop: 20,
-  },
-  _sub_header__first_column: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  _next_button: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "white",
-    borderRadius: 3,
-    height: 20,
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-  _ative_tab_show: {
-    backgroundColor: "#F7931E",
-    width: 20,
-    height: 20,
-    borderRadius: 3,
-    alignItems: "center",
-    justifyContent: "center",
-    marginRight: 10,
-  },
-  _ative_tab_number: {
-    color: "white",
-    fontSize: 10,
-  },
-  _tab_two: {
-    backgroundColor: "white",
-    width: 20,
-    height: 20,
-    borderRadius: 3,
-    alignItems: "center",
-    justifyContent: "center",
-    marginRight: 10,
-  },
-  _tab_two_number: {
-    color: "#F7931E",
-    fontSize: 10,
-  },
-  _next_button_text: {
-    fontSize: 14,
-    color: "#F7931E",
-  },
+
   _card_main: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
-    marginTop: 50,
+    marginTop: 10,
   },
   _card: {
     elevation: 2,
@@ -317,5 +281,30 @@ const styles = StyleSheet.create({
     fontSize: 10,
     marginLeft: 5,
   },
+  _slider_main: {
+    marginTop: 20,
+    flexDirection:"row"
+  },
+  _slider_card: {
+    backgroundColor: "red",
+    width: 250,
+    height: 128,
+    marginRight:20
+  },
+  _image2: {
+    flex: 1,
+    resizeMode: "cover",
+    height: 128,
+  },
+  _per_off:{
+      backgroundColor:"#004545",
+      width:"40%",
+      color:"white",
+      fontSize:15,
+      fontWeight:"bold",
+      textAlign:"center",
+      paddingTop:10,
+      paddingBottom:10
+  }
 });
-export default Packs;
+export default Auction;

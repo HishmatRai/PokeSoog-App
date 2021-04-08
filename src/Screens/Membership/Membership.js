@@ -13,7 +13,7 @@ import {
 import { Feather } from "@expo/vector-icons";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const OrderConfirmed = (props) => {
+const Membership = (props) => {
   const [dimensions, setDimensions] = useState({ window, screen });
   const onChange = ({ window, screen }) => {
     setDimensions({ window, screen });
@@ -39,17 +39,35 @@ const OrderConfirmed = (props) => {
         style={styles._image}
       >
         <ScrollView>
-          <View style={{ margin: 20 }}>
-            <Image
-              source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
-              style={styles.card_img}
-            />
-            <Text style={styles._heading}>Pokemon sowrd and sheild battle styles booster packs</Text>
-            <Text style={styles._message}>Order Confirmed! Thanks for choosing Us!</Text>
-             {/* bbutton */}
-             <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("SelectCategory")}>
-                  <Text style={styles._pay_button_text}>Back to home</Text>
+          <View>
+            <View style={{ margin: 20 }}>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <TouchableOpacity>
+                  <Feather name="menu" size={24} color="white" />
                 </TouchableOpacity>
+                <Text
+                  style={{
+                    textAlign: "center",
+                    color: "white",
+                    marginLeft: "30%",
+                    fontSize: 20,
+                  }}
+                >
+                  Membership
+                </Text>
+              </View>
+
+              <Image
+                source={require("./../../img/doller.png")}
+                style={styles.card_img}
+              />
+           
+            </View>
+
+              {/* bbutton */}
+              <TouchableOpacity style={styles._pay_button}>
+                <Text style={styles._pay_button_text}>Subscribe</Text>
+              </TouchableOpacity>
           </View>
         </ScrollView>
       </ImageBackground>
@@ -68,39 +86,26 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   card_img: {
-    width: 130,
-    height: 130,
+    width: 201,
+    height: 157,
     borderRadius: 5,
     alignSelf: "center",
-    marginTop: 50,
-  },
-  _heading:{
-      color:"white",
-      fontSize:19,
-      textAlign:"center",
-      width:"50%",
-      alignSelf:"center",
-      marginTop:30
-  },
-  _message:{
-    color:"white",
-    fontSize:19,
-    textAlign:"center",
-    width:"50%",
-    alignSelf:"center",
-    marginTop:30
+    marginTop: 80,
   },
   _pay_button: {
-    backgroundColor: "#F7931E",
-    borderRadius: 5,
+    backgroundColor: "white",
     paddingBottom: 8,
     paddingTop: 5,
-    marginTop:50
+    marginTop: 20,
+    width: "60%",
+    alignSelf: "center",
+    borderRadius:5
   },
   _pay_button_text: {
-    color: "white",
+    color: "black",
     fontSize: 16,
     textAlign: "center",
+    fontWeight: "bold",
   },
 });
-export default OrderConfirmed;
+export default Membership;

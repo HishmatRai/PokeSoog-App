@@ -19,7 +19,7 @@ import RBSheet from "react-native-raw-bottom-sheet";
 import BottomSheet from "./../../Component/BottomSheet/BottomSheet";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const Packs = (props) => {
+const SellCards = (props) => {
   const [dimensions, setDimensions] = useState({ window, screen });
   const [remember, setRemember] = useState(false);
   const onChange = ({ window, screen }) => {
@@ -68,14 +68,19 @@ const Packs = (props) => {
             <View style={{ margin: 20 }}>
               {/* Header */}
               <View style={styles._header_main}>
-                <TouchableOpacity onPress={() => props.navigation.goBack()}>
+                  <View style={{flexDirection:"row",alignItems:"center"}}>
+                <TouchableOpacity>
                   <Ionicons
                     name="chevron-back-outline"
                     size={24}
                     color="white"
-                  />
+                    />
                 </TouchableOpacity>
-                <Text style={styles._header_heading}>Packs</Text>
+                <Text style={styles._header_heading}>Welcome seller</Text>
+                    </View>
+                <TouchableOpacity onPress={() => this.RBSheet.open()}>
+                  <Ionicons name="filter-sharp" size={24} color="white" />
+                </TouchableOpacity>
               </View>
 
               {/* Sub Header  */}
@@ -96,16 +101,14 @@ const Packs = (props) => {
                     />
                   </TouchableOpacity>
                 </View>
-                <TouchableOpacity onPress={() => this.RBSheet.open()}>
-                  <Ionicons name="filter-sharp" size={24} color="white" />
-                </TouchableOpacity>
+               
               </View>
 
               {/* Card  */}
               {CardData.map((v, i) => {
                 return (
                   <View style={styles._card_main}>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    <View style={styles._card}>
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}
@@ -131,8 +134,8 @@ const Packs = (props) => {
                         )}
                         <Text style={styles._remember_text}>Compare</Text>
                       </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    </View>
+                    <View style={styles._card}>
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}
@@ -158,7 +161,7 @@ const Packs = (props) => {
                         )}
                         <Text style={styles._remember_text}>Compare</Text>
                       </View>
-                    </TouchableOpacity>
+                    </View>
                   </View>
                 );
               })}
@@ -219,6 +222,7 @@ const styles = StyleSheet.create({
   _header_main: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent:"space-between"
   },
   _header_heading: {
     color: "white",
@@ -318,4 +322,4 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
-export default Packs;
+export default SellCards;

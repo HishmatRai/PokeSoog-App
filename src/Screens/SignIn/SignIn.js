@@ -74,7 +74,7 @@ const SignIn = (props) => {
                 <Text style={styles._forgotPassword}>Forgot Password?</Text>
               </TouchableOpacity>
               {/* Buttons Main */}
-              <TouchableOpacity style={styles._login_btn}>
+              <TouchableOpacity style={styles._login_btn} onPress={() => props.navigation.navigate("SelectCategory")}>
                 <Text style={styles._login_btn_text}>Sign In</Text>
               </TouchableOpacity>
 
@@ -97,7 +97,7 @@ const SignIn = (props) => {
 
               <View style={styles._dont_account_main}>
                 <Text style={styles._dont_account_main_heading}>Don't have an account? </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => props.navigation.navigate("SignUp")}>
                   <Text style={styles._singUp_btn}>Sign Up</Text>
                 </TouchableOpacity>
               </View>

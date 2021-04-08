@@ -11,9 +11,10 @@ import {
   Dimensions,
 } from "react-native";
 import { Ionicons, Entypo } from "@expo/vector-icons";
+import Rating from "./../../Component/Rating/Rating";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const PokemanSword = (props) => {
+const PlaceBid = (props) => {
   const [dimensions, setDimensions] = useState({ window, screen });
   const [numberOfProduct, setNumberOfProduct] = useState(1);
   const onChange = ({ window, screen }) => {
@@ -55,7 +56,7 @@ const PokemanSword = (props) => {
               {/* Header */}
               <View style={styles._header_main}>
                 <View style={styles._header_column}>
-                  <TouchableOpacity onPress={() => props.navigation.goBack()}>
+                  <TouchableOpacity>
                     <Ionicons
                       name="chevron-back-outline"
                       size={24}
@@ -83,43 +84,52 @@ const PokemanSword = (props) => {
 
               {/*  */}
               <View style={styles.card_main}>
-                <View style={styles._card_first_column}>
-                </View>
+                <View style={styles._card_first_column}></View>
                 <View style={styles._card_secont_column}>
                   <Image
                     source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                     style={styles.card_img}
                   />
-                  <Text style={styles._heading}>Pokemon sowrd and sheild battle styles booster packs</Text>
-                  <Text style={styles._price}>$4.99</Text>
-                  <View style={styles.productIncDecBtn}>
-                    <TouchableOpacity onPress={() => decreaseProductItem()} style={styles._decrease_btn}>
-                      <Text style={styles.DecreaseTxt}>-</Text>
+                  <Text style={styles._heading}>
+                    Pokemon sowrd and sheild battle styles booster packs
+                  </Text>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      alignSelf: "center",
+                    }}
+                  >
+                    <Text style={styles._price}>Starting bid</Text>
+                    <Text style={styles._price2}>$1.99</Text>
+                  </View>
+                  <Text
+                    style={{
+                      textAlign: "center",
+                      fontSize: 10,
+                      color: "#CCCACA",
+                    }}
+                  >
+                    5d 5h
+                  </Text>
+                  <View style={styles._rating_main}>
+                    <Rating />
+                    <Text style={{ color: "white", fontSize: 13 }}>(23)</Text>
+                  </View>
+                  {/* bbutton */}
+                  <View style={{ marginTop: 20, marginBottom: 30 }}>
+                    <TouchableOpacity style={styles._pay_button}>
+                      <Text style={styles._pay_button_text}>Place Bid</Text>
                     </TouchableOpacity>
-                    <Text style={styles.totalNumberofProductTxt}>
-                      {numberOfProduct}
-                    </Text>
-                    <TouchableOpacity onPress={() => increaseProductItem()} style={styles._decrease_btn}>
-                      <Text style={styles.IncreaseTxt}>+</Text>
+                    <TouchableOpacity style={styles._pay_button}>
+                      <Text style={styles._pay_button_text}>
+                        Watch this item
+                      </Text>
                     </TouchableOpacity>
                   </View>
-                    {/* bbutton */}
-                <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("MyCart")}>
-                  <Text style={styles._pay_button_text}>Add to Cart</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles._pay_button}>
-                  <Text style={styles._pay_button_text}>Add to wish list </Text>
-                </TouchableOpacity>
                 </View>
-                <View style={styles._card_third_column}>
-                  <TouchableOpacity style={styles.__interested_button}>
-                  <Entypo name="heart-outlined" size={24} color="white" />
-                  </TouchableOpacity>
-                </View>
-
-                
+                <View style={styles._card_third_column}></View>
               </View>
-
             </View>
           </View>
         </ScrollView>
@@ -167,110 +177,68 @@ const styles = StyleSheet.create({
     fontSize: 7,
     color: "white",
   },
-  productIncDecBtn: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    marginTop: 5,
-  },
-  _decrease_btn: {
-    backgroundColor: "white",
-    width: "20%",
-    borderColor:"#707070",
-    borderWidth:1,
-    borderRadius:5,
-    alignItems:"center",
-    justifyContent:"center"
-  },
-  DecreaseTxt: {
-    color: "black",
-    
-  },
-  IncreaseTxt: {
-    color: "black",
-  },
-  totalNumberofProductTxt: {
-    width: "47%",
-    backgroundColor: "white",
-    borderColor:"#707070",
-    borderWidth:1,
-    borderRadius:5,
-    alignItems:"center",
-    justifyContent:"center",
-    color:"black",
-    textAlign:"center"
-  },
-  minimumView: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    borderBottomWidth: 1,
-    borderBottomColor: "#E5E5E5",
-    paddingBottom: 10,
-    paddingTop: 10,
-  },
+
   card_main: {
     backgroundColor: "rgba(0,146,146, 100)",
     marginTop: 50,
     flexDirection: "row",
     // alignItems: "center",
     borderRadius: 10,
-    padding: 10,
-    paddingBottom:20,
-    elevation:8
+    padding: 20,
+    paddingBottom: 20,
+    elevation: 8,
   },
   _card_first_column: {
-    width: "20%"
+    width: "20%",
   },
   _card_secont_column: {
-    width: "60%"
+    width: "60%",
   },
   _card_third_column: {
-    width: "20%"
+    width: "20%",
   },
   card_img: {
-    width: 130,
-    height: 130,
+    width: 83,
+    height: 83,
     borderRadius: 5,
     alignSelf: "center",
-    marginTop: 20,
   },
   _heading: {
     color: "white",
-    fontSize: 19,
+    fontSize: 15,
     textAlign: "center",
-    width: "100%",
+    width: "70%",
     alignSelf: "center",
-    marginTop: 30
+    marginTop: 20,
   },
   _price: {
     color: "white",
-    fontSize: 18,
+    fontSize: 13,
     textAlign: "center",
     fontWeight: "bold",
-    marginTop: 10
+  },
+  _price2: {
+    color: "white",
+    fontSize: 13,
+    textAlign: "center",
+    fontWeight: "bold",
+    marginLeft: 20,
   },
   _pay_button: {
     backgroundColor: "#F7931E",
-    borderRadius: 5,
     paddingBottom: 8,
     paddingTop: 5,
-    marginTop:20
+    marginTop: 20,
   },
   _pay_button_text: {
     color: "white",
     fontSize: 16,
     textAlign: "center",
   },
-  __interested_button:{
-    backgroundColor:"#008080",
-    width:36,
-    height:36,
-    borderRadius:36/2,
-    alignItems:"center",
-    justifyContent:"center",
-    elevation:8,
-    marginTop: 20,
-  }
+  _rating_main: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
 });
-export default PokemanSword;
+export default PlaceBid;

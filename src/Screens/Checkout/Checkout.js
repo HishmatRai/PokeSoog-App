@@ -61,7 +61,7 @@ const Checkout = (props) => {
               {/* Header */}
               <View style={styles._header_main}>
                 <View style={styles._header_column}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => props.navigation.goBack()}>
                     <Ionicons
                       name="chevron-back-outline"
                       size={24}
@@ -172,7 +172,7 @@ const Checkout = (props) => {
                 })}
 
                 {/* bbutton */}
-                <TouchableOpacity style={styles._pay_button}>
+                <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("CreditCard")}>
                   <Text style={styles._pay_button_text}>Pay and Proceed</Text>
                 </TouchableOpacity>
               </View>

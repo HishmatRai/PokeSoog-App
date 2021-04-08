@@ -9,17 +9,15 @@ import {
   StatusBar,
   Text,
   Dimensions,
-  TextInput,
+  TextInput
 } from "react-native";
 import { Ionicons, Entypo } from "@expo/vector-icons";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const CreditCard = (props) => {
+const ReviewBid = (props) => {
   const [dimensions, setDimensions] = useState({ window, screen });
-  const [text, setText] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [date, setDate] = React.useState("");
-  const [code, setCode] = React.useState("");
+  const [numberOfProduct, setNumberOfProduct] = useState(1);
+  const [price, setPrice] = React.useState("");
   const onChange = ({ window, screen }) => {
     setDimensions({ window, screen });
   };
@@ -30,6 +28,16 @@ const CreditCard = (props) => {
       Dimensions.removeEventListener("change", onChange);
     };
   });
+
+  const increaseProductItem = () => {
+    setNumberOfProduct(numberOfProduct + 1);
+  };
+
+  const decreaseProductItem = () => {
+    if (numberOfProduct >= 1) {
+      setNumberOfProduct(numberOfProduct - 1);
+    }
+  };
   return (
     <View style={styles.container}>
       {/* <<<<<<<< StatusBar >>>>>>>>> */}
@@ -49,14 +57,14 @@ const CreditCard = (props) => {
               {/* Header */}
               <View style={styles._header_main}>
                 <View style={styles._header_column}>
-                  <TouchableOpacity onPress={() => props.navigation.goBack()}>
+                  <TouchableOpacity>
                     <Ionicons
                       name="chevron-back-outline"
                       size={24}
                       color="white"
                     />
                   </TouchableOpacity>
-                  <Text style={styles._header_heading}>Checkout</Text>
+                  <Text style={styles._header_heading}>Place bid</Text>
                 </View>
                 <View style={styles._header_column}>
                   <TouchableOpacity>
@@ -74,59 +82,26 @@ const CreditCard = (props) => {
               <View style={styles._cart_show_main}>
                 <Text style={styles._cart_show}>1</Text>
               </View>
-
-              {/* input */}
-              <View style={styles._input_main}>
-                <Text style={styles._input_heading}>Card Number</Text>
+              <View style={styles._Data_main}>
+                <Text style={styles._heading}>Approx. $ 1.5</Text>
+                <Text style={styles._heading}>0 bid . 5d 4h left</Text>
+                <Text style={{ fontSize: 24, color: "white" }}>
+                We'll biid for you, up to
+                </Text>
                 <TextInput
-                  value={text}
-                  onChangeText={(text) => setText(text)}
-                  style={styles._input}
-                  underlineColor="black"
-                  placeholderTextColor="black"
-                  keyboardType="numeric"
-                />
-                <Text style={styles._input_heading}>Card Holder Name</Text>
-                <TextInput
-                  value={name}
-                  onChangeText={(name) => setName(name)}
-                  style={styles._input}
-                  underlineColor="black"
-                  placeholderTextColor="black"
-                />
-
-                <View style={styles._date_code_main}>
-                  <View style={styles._date_input}>
-                    <Text style={styles._input_heading}>Expire Date</Text>
-                    <TextInput
-                      value={date}
-                      placeholder="MM  / YY"
-                      onChangeText={(date) => setDate(date)}
-                      style={styles._input}
-                      underlineColor="black"
-                      placeholderTextColor="black"
-                      keyboardType="numeric"
-                    />
-                  </View>
-                  <View style={styles._date_input}>
-                    <Text style={styles._input_heading}>Security Code</Text>
-                    <TextInput
-                    placeholder="CVV"
-                      value={code}
-                      onChangeText={(code) => setCode(code)}
-                      style={styles._input}
-                      underlineColor="black"
-                      placeholderTextColor="black"
-                      keyboardType="numeric"
-                    />
-                  </View>
-                </View>
+                placeholder="$ 4"
+                value={price}
+                onChangeText={(price) => setPrice(price)}
+                style={styles._input}
+                underlineColor="black"
+                placeholderTextColor="white"
+                keyboardType="numeric"
+              />
               </View>
-
-               {/* bbutton */}
-               <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("OrderConfirmed")}>
-                  <Text style={styles._pay_button_text}>Pay and Proceed</Text>
-                </TouchableOpacity>
+              {/* bbutton */}
+              <TouchableOpacity style={styles._pay_button}>
+                <Text style={styles._pay_button_text}>Review Bid</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
@@ -174,44 +149,45 @@ const styles = StyleSheet.create({
     fontSize: 7,
     color: "white",
   },
-  _input_main: {
+  _Data_main: {
     marginTop: 50,
+    alignItems: "center",
   },
-  _input: {
-    paddingTop: 5,
-    paddingBottom: 5,
-    color: "black",
-    backgroundColor: "white",
-    borderRadius: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop: 5,
-  },
-  _input_heading: {
+  _heading: {
     color: "white",
-    fontSize: 13,
-    fontWeight: "bold",
-    marginTop: 20,
+    fontSize: 17,
+    marginBottom: 10,
   },
-  _date_code_main:{
-      flexDirection:"row",
-      alignItems:"center",
-      justifyContent:"space-between"
-  },
-  _date_input:{
-      width:"40%"
+  _price: {
+    color: "white",
+    fontSize: 45,
+    marginBottom: 10,
+    marginTop: 10,
   },
   _pay_button: {
     backgroundColor: "#F7931E",
-    borderRadius: 5,
     paddingBottom: 8,
     paddingTop: 5,
-    marginTop:50
+    marginTop: 20,
+    width: "60%",
+    alignSelf: "center",
   },
   _pay_button_text: {
     color: "white",
     fontSize: 16,
     textAlign: "center",
+    fontWeight: "bold",
+  },
+  _input: {
+    paddingTop: 5,
+    paddingBottom: 5,
+    color: "white",
+    borderRadius: 5,
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop: 20,
+    fontSize:45,
+    width:"50%",
   },
 });
-export default CreditCard;
+export default ReviewBid;

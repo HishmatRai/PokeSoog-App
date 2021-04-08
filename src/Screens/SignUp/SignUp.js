@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 // import { RadioButton } from 'react-native-paper';
+import RadioButton from './../../Component/RadioButton/RadioButton'
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 const SignUp = (props) => {
@@ -77,7 +78,7 @@ const SignUp = (props) => {
                                     style={{backgroundColor:"green"}}
                                 />
                             </View> */}
-
+<RadioButton />
                             {/* input */}
                             <View style={styles._first_last_name}>
                                 <TextInput
@@ -125,13 +126,13 @@ const SignUp = (props) => {
                             />
 
                             {/* Buttons Main */}
-                            <TouchableOpacity style={styles._login_btn}>
+                            <TouchableOpacity style={styles._login_btn} onPress={() => props.navigation.navigate("SignIn")}>
                                 <Text style={styles._login_btn_text}>Sign Up</Text>
                             </TouchableOpacity>
 
                             <View style={styles._dont_account_main}>
                                 <Text style={styles._dont_account_main_heading}>Already have an account? </Text>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => props.navigation.navigate("SignIn")}>
                                     <Text style={styles._singUp_btn}>Sign In</Text>
                                 </TouchableOpacity>
                             </View>
