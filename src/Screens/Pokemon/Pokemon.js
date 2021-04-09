@@ -56,7 +56,10 @@ const Pokemon = (props) => {
               {/* Card  */}
               <View style={styles._Card_main}>
                 <View style={styles._card}>
-                  <TouchableOpacity style={styles._card_column} onPress={() => props.navigation.navigate("Packs")}>
+                  <TouchableOpacity
+                    style={styles._card_column}
+                    onPress={() => props.navigation.navigate("Packs")}
+                  >
                     <Image
                       source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                       style={styles._card_image}
@@ -103,7 +106,10 @@ const Pokemon = (props) => {
                   <Text style={styles._card_heading}>Card sell</Text>
                 </View>
                 <View style={styles._card}>
-                  <TouchableOpacity style={styles._card_column} onPress={() => props.navigation.navigate("Auction")}>
+                  <TouchableOpacity
+                    style={styles._card_column}
+                    onPress={() => props.navigation.navigate("Auction")}
+                  >
                     <Image
                       source={require("./../../img/legal.png")}
                       style={styles._card_image}

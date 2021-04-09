@@ -5,7 +5,6 @@ import {
   ImageBackground,
   TouchableOpacity,
   ScrollView,
-  Image,
   StatusBar,
   Text,
   Dimensions,
@@ -147,7 +146,10 @@ const AddProduct = (props) => {
               />
 
               {/* bbutton */}
-              <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("PokemonForMember")}>
+              <TouchableOpacity
+                style={styles._pay_button}
+                onPress={() => props.navigation.navigate("PokemonForMember")}
+              >
                 <Text style={styles._pay_button_text}>Save</Text>
               </TouchableOpacity>
             </View>

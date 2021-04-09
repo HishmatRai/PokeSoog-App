@@ -5,7 +5,6 @@ import {
   ImageBackground,
   TouchableOpacity,
   ScrollView,
-  Image,
   StatusBar,
   Text,
   Dimensions,
@@ -101,7 +100,10 @@ const ConfirmBid = (props) => {
                 </Text>
               </View>
               {/* bbutton */}
-              <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("PokemonForMember")}>
+              <TouchableOpacity
+                style={styles._pay_button}
+                onPress={() => props.navigation.navigate("PokemonForMember")}
+              >
                 <Text style={styles._pay_button_text}>Confirm Bid</Text>
               </TouchableOpacity>
             </View>

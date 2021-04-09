@@ -44,12 +44,19 @@ const OrderConfirmed = (props) => {
               source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
               style={styles.card_img}
             />
-            <Text style={styles._heading}>Pokemon sowrd and sheild battle styles booster packs</Text>
-            <Text style={styles._message}>Order Confirmed! Thanks for choosing Us!</Text>
-             {/* bbutton */}
-             <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("SelectCategory")}>
-                  <Text style={styles._pay_button_text}>Back to home</Text>
-                </TouchableOpacity>
+            <Text style={styles._heading}>
+              Pokemon sowrd and sheild battle styles booster packs
+            </Text>
+            <Text style={styles._message}>
+              Order Confirmed! Thanks for choosing Us!
+            </Text>
+            {/* bbutton */}
+            <TouchableOpacity
+              style={styles._pay_button}
+              onPress={() => props.navigation.navigate("SelectCategory")}
+            >
+              <Text style={styles._pay_button_text}>Back to home</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </ImageBackground>
@@ -74,28 +81,28 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 50,
   },
-  _heading:{
-      color:"white",
-      fontSize:19,
-      textAlign:"center",
-      width:"50%",
-      alignSelf:"center",
-      marginTop:30
+  _heading: {
+    color: "white",
+    fontSize: 19,
+    textAlign: "center",
+    width: "50%",
+    alignSelf: "center",
+    marginTop: 30,
   },
-  _message:{
-    color:"white",
-    fontSize:19,
-    textAlign:"center",
-    width:"50%",
-    alignSelf:"center",
-    marginTop:30
+  _message: {
+    color: "white",
+    fontSize: 19,
+    textAlign: "center",
+    width: "50%",
+    alignSelf: "center",
+    marginTop: 30,
   },
   _pay_button: {
     backgroundColor: "#F7931E",
     borderRadius: 5,
     paddingBottom: 8,
     paddingTop: 5,
-    marginTop:50
+    marginTop: 50,
   },
   _pay_button_text: {
     color: "white",

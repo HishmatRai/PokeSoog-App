@@ -68,16 +68,16 @@ const SellCards = (props) => {
             <View style={{ margin: 20 }}>
               {/* Header */}
               <View style={styles._header_main}>
-                  <View style={{flexDirection:"row",alignItems:"center"}}>
-                <TouchableOpacity>
-                  <Ionicons
-                    name="chevron-back-outline"
-                    size={24}
-                    color="white"
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <TouchableOpacity>
+                    <Ionicons
+                      name="chevron-back-outline"
+                      size={24}
+                      color="white"
                     />
-                </TouchableOpacity>
-                <Text style={styles._header_heading}>Welcome seller</Text>
-                    </View>
+                  </TouchableOpacity>
+                  <Text style={styles._header_heading}>Welcome seller</Text>
+                </View>
                 <TouchableOpacity onPress={() => this.RBSheet.open()}>
                   <Ionicons name="filter-sharp" size={24} color="white" />
                 </TouchableOpacity>
@@ -101,14 +101,16 @@ const SellCards = (props) => {
                     />
                   </TouchableOpacity>
                 </View>
-               
               </View>
 
               {/* Card  */}
               {CardData.map((v, i) => {
                 return (
                   <View style={styles._card_main}>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    <TouchableOpacity
+                      style={styles._card}
+                      onPress={() => props.navigation.navigate("PokemanSword")}
+                    >
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}
@@ -135,7 +137,10 @@ const SellCards = (props) => {
                         <Text style={styles._remember_text}>Compare</Text>
                       </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    <TouchableOpacity
+                      style={styles._card}
+                      onPress={() => props.navigation.navigate("PokemanSword")}
+                    >
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}
@@ -222,7 +227,7 @@ const styles = StyleSheet.create({
   _header_main: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent:"space-between"
+    justifyContent: "space-between",
   },
   _header_heading: {
     color: "white",

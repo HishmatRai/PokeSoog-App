@@ -23,7 +23,7 @@ import {
   SellCards,
   Auction,
   DragonBall,
-  SubscriptionDoneSuccessfully
+  SubscriptionDoneSuccessfully,
 } from "./../Screens/index";
 function Navigation() {
   const Stack = createStackNavigator();
@@ -70,7 +70,7 @@ function Navigation() {
           component={Checkout}
           options={{ headerShown: false }}
         />
-       <Stack.Screen
+        <Stack.Screen
           name="CreditCard"
           component={CreditCard}
           options={{ headerShown: false }}
@@ -84,7 +84,7 @@ function Navigation() {
           name="PokemonForMember"
           component={PokemonForMember}
           options={{ headerShown: false }}
-        />  
+        />
         <Stack.Screen
           name="OrderSummary"
           component={OrderSummary}
@@ -94,8 +94,8 @@ function Navigation() {
           name="MyCart"
           component={MyCart}
           options={{ headerShown: false }}
-      />
-       <Stack.Screen
+        />
+        <Stack.Screen
           name="Membership"
           component={Membership}
           options={{ headerShown: false }}
@@ -118,29 +118,29 @@ function Navigation() {
         <Stack.Screen
           name="PlaceBid"
           component={PlaceBid}
-          options={{ headerShown: false }}xd
-
+          options={{ headerShown: false }}
+          xd
         />
         <Stack.Screen
           name="SellCards"
           component={SellCards}
           options={{ headerShown: false }}
-        /> 
+        />
         <Stack.Screen
           name="DragonBall"
           component={DragonBall}
           options={{ headerShown: false }}
-        /> 
-       <Stack.Screen
+        />
+        <Stack.Screen
           name="Auction"
           component={Auction}
           options={{ headerShown: false }}
-        /> 
-         <Stack.Screen
+        />
+        <Stack.Screen
           name="SubscriptionDoneSuccessfully"
           component={SubscriptionDoneSuccessfully}
           options={{ headerShown: false }}
-        /> 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

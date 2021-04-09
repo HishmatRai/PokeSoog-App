@@ -11,8 +11,6 @@ import {
   Dimensions,
   TextInput,
 } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-// import { RadioButton } from 'react-native-paper';
 import RadioButton from "./../../Component/RadioButton/RadioButton";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
@@ -39,10 +37,9 @@ const SignUp = (props) => {
   let HeadingData = [{ heading: "Individual" }, { heading: "Business" }];
   const radioBtnCheckedValue = (value) => {
     setChecked(value);
-    
-};
-const handler_signup =  (value) => {
-//    alert(value)
+  };
+  const handler_signup = (value) => {
+    //    alert(value)
   };
   return (
     <View style={styles.container}>

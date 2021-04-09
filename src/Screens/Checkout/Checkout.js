@@ -172,7 +172,10 @@ const Checkout = (props) => {
                 })}
 
                 {/* bbutton */}
-                <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("CreditCard")}>
+                <TouchableOpacity
+                  style={styles._pay_button}
+                  onPress={() => props.navigation.navigate("CreditCard")}
+                >
                   <Text style={styles._pay_button_text}>Pay and Proceed</Text>
                 </TouchableOpacity>
               </View>
@@ -265,7 +268,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingBottom: 8,
     paddingTop: 5,
-    marginTop:20
+    marginTop: 20,
   },
   _pay_button_text: {
     color: "white",

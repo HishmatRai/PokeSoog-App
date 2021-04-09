@@ -105,7 +105,10 @@ const Packs = (props) => {
               {CardData.map((v, i) => {
                 return (
                   <View style={styles._card_main}>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    <TouchableOpacity
+                      style={styles._card}
+                      onPress={() => props.navigation.navigate("PokemanSword")}
+                    >
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}
@@ -132,7 +135,10 @@ const Packs = (props) => {
                         <Text style={styles._remember_text}>Compare</Text>
                       </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles._card} onPress={() => props.navigation.navigate("PokemanSword")}>
+                    <TouchableOpacity
+                      style={styles._card}
+                      onPress={() => props.navigation.navigate("PokemanSword")}
+                    >
                       <Image
                         source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                         style={styles.card_img}

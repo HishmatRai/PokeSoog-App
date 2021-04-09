@@ -118,7 +118,10 @@ const PlaceBid = (props) => {
                   </View>
                   {/* bbutton */}
                   <View style={{ marginTop: 20, marginBottom: 30 }}>
-                    <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("ReviewBid")}>
+                    <TouchableOpacity
+                      style={styles._pay_button}
+                      onPress={() => props.navigation.navigate("ReviewBid")}
+                    >
                       <Text style={styles._pay_button_text}>Place Bid</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles._pay_button}>

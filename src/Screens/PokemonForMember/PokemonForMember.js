@@ -56,7 +56,10 @@ const PokemonForMember = (props) => {
               {/* Card  */}
               <View style={styles._Card_main}>
                 <View style={styles._card}>
-                  <TouchableOpacity style={styles._card_column} onPress={() => props.navigation.navigate("SellCards")}>
+                  <TouchableOpacity
+                    style={styles._card_column}
+                    onPress={() => props.navigation.navigate("SellCards")}
+                  >
                     <Image
                       source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                       style={styles._card_image}
@@ -103,7 +106,10 @@ const PokemonForMember = (props) => {
                   <Text style={styles._card_heading}>Card sell</Text>
                 </View>
                 <View style={styles._card}>
-                  <TouchableOpacity style={styles._card_column} onPress={() => props.navigation.navigate("Auction")}>
+                  <TouchableOpacity
+                    style={styles._card_column}
+                    onPress={() => props.navigation.navigate("Auction")}
+                  >
                     <Image
                       source={require("./../../img/legal.png")}
                       style={styles._card_image}
@@ -116,10 +122,13 @@ const PokemonForMember = (props) => {
           </View>
         </ScrollView>
         <View style={styles._Add_button_main}>
-            <TouchableOpacity style={styles._Add_button} onPress={() => props.navigation.navigate("AddProduct")}>
+          <TouchableOpacity
+            style={styles._Add_button}
+            onPress={() => props.navigation.navigate("AddProduct")}
+          >
             <Ionicons name="md-add" size={24} color="#008080" />
-            </TouchableOpacity >
-            <Text style={styles._Add_button_text}>Add products</Text>
+          </TouchableOpacity>
+          <Text style={styles._Add_button_text}>Add products</Text>
         </View>
       </ImageBackground>
     </View>
@@ -181,22 +190,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#7AC6C6",
     borderRadius: 5,
   },
-  _Add_button_main:{
-      bottom:30,
-      alignSelf:"center",
-      alignItems:"center",
-      justifyContent:"center"
+  _Add_button_main: {
+    bottom: 30,
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
   },
-  _Add_button:{
-      backgroundColor:"#F7931E",
-      width:54,
-      height:54,
-      borderRadius:54/2,
-      alignItems:"center",
-      justifyContent:"center"
+  _Add_button: {
+    backgroundColor: "#F7931E",
+    width: 54,
+    height: 54,
+    borderRadius: 54 / 2,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  _Add_button_text:{
-      color:"white"
-  }
+  _Add_button_text: {
+    color: "white",
+  },
 });
 export default PokemonForMember;

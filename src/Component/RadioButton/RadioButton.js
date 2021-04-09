@@ -1,7 +1,6 @@
 import * as React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { RadioButton } from "react-native-paper";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 const RadioButton1 = (props) => {
   const [checked, setChecked] = React.useState("Individual");
   return (

@@ -125,7 +125,9 @@ const OrderSummary = (props) => {
                   <Text style={styles._Quantity}>$5.00</Text>
                 </View>
               </View>
-              <View style={{ width: "90%", alignSelf: "center", marginTop: 10 }}>
+              <View
+                style={{ width: "90%", alignSelf: "center", marginTop: 10 }}
+              >
                 <Ionicons name="checkmark-sharp" size={24} color="#FE9000" />
                 <View style={styles._steps_main}>
                   <View style={styles._steps}>
@@ -206,7 +208,7 @@ const OrderSummary = (props) => {
                     color: "black",
                   }}
                   dropDownStyle={{ backgroundColor: "#008080" }}
-                // onChangeItem={(item) => setSelectValue(item.value)}
+                  // onChangeItem={(item) => setSelectValue(item.value)}
                 />
               </View>
 
@@ -233,7 +235,7 @@ const OrderSummary = (props) => {
                     color: "black",
                   }}
                   dropDownStyle={{ backgroundColor: "#008080" }}
-                // onChangeItem={(item) => setSelectValue(item.value)}
+                  // onChangeItem={(item) => setSelectValue(item.value)}
                 />
               </View>
               <View style={styles._first_last_name}>
@@ -257,7 +259,10 @@ const OrderSummary = (props) => {
                 />
               </View>
               {/* bbutton */}
-              <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("Checkout")}>
+              <TouchableOpacity
+                style={styles._pay_button}
+                onPress={() => props.navigation.navigate("Checkout")}
+              >
                 <Text style={styles._pay_button_text}>Continue</Text>
               </TouchableOpacity>
             </View>
@@ -372,7 +377,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop:10
+    marginTop: 10,
   },
   _steps: {
     width: "10%",
@@ -381,12 +386,12 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 30 / 2,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   _steps_color: {
     color: "white",
     fontSize: 12,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   _dot_main: {
     width: "20%",
@@ -396,7 +401,7 @@ const styles = StyleSheet.create({
   _dot_text: {
     color: "white",
     fontSize: 30,
-    marginTop: -19
-  }
+    marginTop: -19,
+  },
 });
 export default OrderSummary;

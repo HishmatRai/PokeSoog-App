@@ -90,8 +90,6 @@ const BottomSheet = (props) => {
               outOfRangeBarColor="#E9E9E9"
               rangeLabelsTextColor="#9C9C9C"
             />
-            {/* <Text>from value:  {fromValue}</Text>
-                    <Text>to value:  {toValue}</Text> */}
           </View>
           <View style={{ marginTop: 0 }}>
             <Text style={styles._heading}>Set</Text>
@@ -120,10 +118,10 @@ const BottomSheet = (props) => {
               // onChangeItem={(item) => setSelectValue(item.value)}
             />
           </View>
-           {/* bbutton */}
-           <TouchableOpacity style={styles._pay_button}>
-                <Text style={styles._pay_button_text}>Search</Text>
-              </TouchableOpacity>
+          {/* bbutton */}
+          <TouchableOpacity style={styles._pay_button}>
+            <Text style={styles._pay_button_text}>Search</Text>
+          </TouchableOpacity>
         </View>
         <View style={{ marginBottom: 40 }}></View>
       </ScrollView>

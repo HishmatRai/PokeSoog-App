@@ -152,7 +152,10 @@ const MyCart = (props) => {
               </View>
 
               {/* bbutton */}
-              <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("OrderSummary")}>
+              <TouchableOpacity
+                style={styles._pay_button}
+                onPress={() => props.navigation.navigate("OrderSummary")}
+              >
                 <Text style={styles._pay_button_text}>Checkout</Text>
               </TouchableOpacity>
 
@@ -162,7 +165,7 @@ const MyCart = (props) => {
                   <Text style={styles._promo_btn_text}>Enter a promo code</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles._promo_btn}>
-                <MaterialIcons name="event-note" size={24} color="white" />
+                  <MaterialIcons name="event-note" size={24} color="white" />
                   <Text style={styles._promo_btn_text}>Add a Note</Text>
                 </TouchableOpacity>
               </View>
@@ -313,7 +316,7 @@ const styles = StyleSheet.create({
   _promo_btn: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:10
+    marginTop: 10,
   },
   _promo_btn_text: {
     color: "white",

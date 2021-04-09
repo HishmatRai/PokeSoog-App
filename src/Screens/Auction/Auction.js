@@ -10,11 +10,7 @@ import {
   Text,
   Dimensions,
 } from "react-native";
-import {
-  Ionicons,
-  Fontisto,
-  AntDesign
-} from "@expo/vector-icons";
+import { Ionicons, Fontisto, AntDesign } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
 import BottomSheet from "./../../Component/BottomSheet/BottomSheet";
 const window = Dimensions.get("window");
@@ -117,7 +113,15 @@ const Auction = (props) => {
                         style={styles.card_img}
                       />
                       <Text style={styles._card_Des}>{v.des}</Text>
-                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center" }}>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          width: "80%",
+                          alignSelf: "center",
+                        }}
+                      >
                         <Image
                           source={require("./../../img/action.png")}
                           style={styles.action_img}
@@ -126,13 +130,25 @@ const Auction = (props) => {
                         <Text style={styles._card_price}>{v.price}</Text>
                       </View>
 
-                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center",marginTop:5 }}>
-                      <Fontisto name="date" size={15} color="white" />
-                      <Text style={styles._card_price}>23 h 35min</Text>
-                        </View>
-                        <TouchableOpacity style={styles._bid_button} onPress={() => props.navigation.navigate("PlaceBid")}>
-                          <Text style={styles._bid_button_text}>Bid Now</Text>
-                        </TouchableOpacity>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          width: "80%",
+                          alignSelf: "center",
+                          marginTop: 5,
+                        }}
+                      >
+                        <Fontisto name="date" size={15} color="white" />
+                        <Text style={styles._card_price}>23 h 35min</Text>
+                      </View>
+                      <TouchableOpacity
+                        style={styles._bid_button}
+                        onPress={() => props.navigation.navigate("PlaceBid")}
+                      >
+                        <Text style={styles._bid_button_text}>Bid Now</Text>
+                      </TouchableOpacity>
                     </View>
                     <View style={styles._card}>
                       <Image
@@ -140,8 +156,16 @@ const Auction = (props) => {
                         style={styles.card_img}
                       />
                       <Text style={styles._card_Des}>{v.des}</Text>
-                     
-                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center" }}>
+
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          width: "80%",
+                          alignSelf: "center",
+                        }}
+                      >
                         <Image
                           source={require("./../../img/action.png")}
                           style={styles.action_img}
@@ -150,13 +174,25 @@ const Auction = (props) => {
                         <Text style={styles._card_price}>{v.price}</Text>
                       </View>
 
-                      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "80%", alignSelf: "center",marginTop:5 }}>
-                      <Fontisto name="date" size={15} color="white" />
-                      <Text style={styles._card_price}>23 h 35min</Text>
-                        </View>
-                        <TouchableOpacity style={styles._bid_button} onPress={() => props.navigation.navigate("PlaceBid")}>
-                          <Text style={styles._bid_button_text}>Bid Now</Text>
-                        </TouchableOpacity>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          width: "80%",
+                          alignSelf: "center",
+                          marginTop: 5,
+                        }}
+                      >
+                        <Fontisto name="date" size={15} color="white" />
+                        <Text style={styles._card_price}>23 h 35min</Text>
+                      </View>
+                      <TouchableOpacity
+                        style={styles._bid_button}
+                        onPress={() => props.navigation.navigate("PlaceBid")}
+                      >
+                        <Text style={styles._bid_button_text}>Bid Now</Text>
+                      </TouchableOpacity>
                     </View>
                   </View>
                 );
@@ -276,12 +312,12 @@ const styles = StyleSheet.create({
   },
   _slider_main: {
     marginTop: 20,
-    flexDirection: "row"
+    flexDirection: "row",
   },
   _slider_card: {
     width: 250,
     height: 128,
-    marginRight: 20
+    marginRight: 20,
   },
   _image2: {
     flex: 1,
@@ -296,26 +332,26 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     paddingTop: 10,
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   action_img: {
     width: 11,
-    height: 11
+    height: 11,
   },
-  _bid_button:{
-    backgroundColor:"#F7931E",
-    width:"60%",
-    alignSelf:"center",
-    marginTop:10,
-    borderColor:"#707070",
-    borderWidth:1
+  _bid_button: {
+    backgroundColor: "#F7931E",
+    width: "60%",
+    alignSelf: "center",
+    marginTop: 10,
+    borderColor: "#707070",
+    borderWidth: 1,
   },
-  _bid_button_text:{
-    color:"white",
-    textAlign:"center",
-    fontSize:12,
-    paddingBottom:5,
-    paddingTop:5
-  }
+  _bid_button_text: {
+    color: "white",
+    textAlign: "center",
+    fontSize: 12,
+    paddingBottom: 5,
+    paddingTop: 5,
+  },
 });
 export default Auction;

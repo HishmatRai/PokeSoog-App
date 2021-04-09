@@ -74,7 +74,10 @@ const SignIn = (props) => {
                 <Text style={styles._forgotPassword}>Forgot Password?</Text>
               </TouchableOpacity>
               {/* Buttons Main */}
-              <TouchableOpacity style={styles._login_btn} onPress={() => props.navigation.navigate("SelectCategory")}>
+              <TouchableOpacity
+                style={styles._login_btn}
+                onPress={() => props.navigation.navigate("SelectCategory")}
+              >
                 <Text style={styles._login_btn_text}>Sign In</Text>
               </TouchableOpacity>
 
@@ -82,7 +85,9 @@ const SignIn = (props) => {
                 <View style={styles._facebook_button_icon}>
                   <FontAwesome name="facebook-f" size={24} color="white" />
                 </View>
-                <Text style={styles._login_btn_text}>Sign In with Facebook</Text>
+                <Text style={styles._login_btn_text}>
+                  Sign In with Facebook
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles._google_button}>
@@ -96,8 +101,12 @@ const SignIn = (props) => {
               </TouchableOpacity>
 
               <View style={styles._dont_account_main}>
-                <Text style={styles._dont_account_main_heading}>Don't have an account? </Text>
-                <TouchableOpacity onPress={() => props.navigation.navigate("SignUp")}>
+                <Text style={styles._dont_account_main_heading}>
+                  Don't have an account?{" "}
+                </Text>
+                <TouchableOpacity
+                  onPress={() => props.navigation.navigate("SignUp")}
+                >
                   <Text style={styles._singUp_btn}>Sign Up</Text>
                 </TouchableOpacity>
               </View>
@@ -170,8 +179,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 5
-
+    borderRadius: 5,
   },
   _facebook_button_icon: {
     width: 36,
@@ -180,7 +188,7 @@ const styles = StyleSheet.create({
     borderRadius: 36 / 2,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: 10
+    marginRight: 10,
   },
   _google_button: {
     backgroundColor: "#F7931E",
@@ -189,8 +197,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 5
-
+    borderRadius: 5,
   },
   _google_button_icon: {
     width: 36,
@@ -199,26 +206,26 @@ const styles = StyleSheet.create({
     borderRadius: 36 / 2,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: 10
+    marginRight: 10,
   },
   _google_logo: {
     width: 28,
-    height: 28
+    height: 28,
   },
   _dont_account_main: {
     alignSelf: "center",
     alignItems: "center",
     flexDirection: "row",
-    marginTop: 50
+    marginTop: 50,
   },
   _dont_account_main_heading: {
     color: "white",
-    fontSize: 18
+    fontSize: 18,
   },
   _singUp_btn: {
     color: "white",
     fontSize: 18,
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
 });
 export default SignIn;

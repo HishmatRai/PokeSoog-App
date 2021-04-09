@@ -5,11 +5,10 @@ import {
   ImageBackground,
   TouchableOpacity,
   ScrollView,
-  Image,
   StatusBar,
   Text,
   Dimensions,
-  TextInput
+  TextInput,
 } from "react-native";
 import { Ionicons, Entypo } from "@expo/vector-icons";
 const window = Dimensions.get("window");
@@ -86,20 +85,23 @@ const ReviewBid = (props) => {
                 <Text style={styles._heading}>Approx. $ 1.5</Text>
                 <Text style={styles._heading}>0 bid . 5d 4h left</Text>
                 <Text style={{ fontSize: 24, color: "white" }}>
-                We'll biid for you, up to
+                  We'll biid for you, up to
                 </Text>
                 <TextInput
-                placeholder="$ 4"
-                value={price}
-                onChangeText={(price) => setPrice(price)}
-                style={styles._input}
-                underlineColor="black"
-                placeholderTextColor="white"
-                keyboardType="numeric"
-              />
+                  placeholder="$ 4"
+                  value={price}
+                  onChangeText={(price) => setPrice(price)}
+                  style={styles._input}
+                  underlineColor="black"
+                  placeholderTextColor="white"
+                  keyboardType="numeric"
+                />
               </View>
               {/* bbutton */}
-              <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("ConfirmBid")}>
+              <TouchableOpacity
+                style={styles._pay_button}
+                onPress={() => props.navigation.navigate("ConfirmBid")}
+              >
                 <Text style={styles._pay_button_text}>Review Bid</Text>
               </TouchableOpacity>
             </View>
@@ -186,8 +188,8 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     marginTop: 20,
-    fontSize:45,
-    width:"50%",
+    fontSize: 45,
+    width: "50%",
   },
 });
 export default ReviewBid;

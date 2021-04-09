@@ -83,43 +83,52 @@ const PokemanSword = (props) => {
 
               {/*  */}
               <View style={styles.card_main}>
-                <View style={styles._card_first_column}>
-                </View>
+                <View style={styles._card_first_column}></View>
                 <View style={styles._card_secont_column}>
                   <Image
                     source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                     style={styles.card_img}
                   />
-                  <Text style={styles._heading}>Pokemon sowrd and sheild battle styles booster packs</Text>
+                  <Text style={styles._heading}>
+                    Pokemon sowrd and sheild battle styles booster packs
+                  </Text>
                   <Text style={styles._price}>$4.99</Text>
                   <View style={styles.productIncDecBtn}>
-                    <TouchableOpacity onPress={() => decreaseProductItem()} style={styles._decrease_btn}>
+                    <TouchableOpacity
+                      onPress={() => decreaseProductItem()}
+                      style={styles._decrease_btn}
+                    >
                       <Text style={styles.DecreaseTxt}>-</Text>
                     </TouchableOpacity>
                     <Text style={styles.totalNumberofProductTxt}>
                       {numberOfProduct}
                     </Text>
-                    <TouchableOpacity onPress={() => increaseProductItem()} style={styles._decrease_btn}>
+                    <TouchableOpacity
+                      onPress={() => increaseProductItem()}
+                      style={styles._decrease_btn}
+                    >
                       <Text style={styles.IncreaseTxt}>+</Text>
                     </TouchableOpacity>
                   </View>
-                    {/* bbutton */}
-                <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("MyCart")}>
-                  <Text style={styles._pay_button_text}>Add to Cart</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles._pay_button}>
-                  <Text style={styles._pay_button_text}>Add to wish list </Text>
-                </TouchableOpacity>
+                  {/* bbutton */}
+                  <TouchableOpacity
+                    style={styles._pay_button}
+                    onPress={() => props.navigation.navigate("MyCart")}
+                  >
+                    <Text style={styles._pay_button_text}>Add to Cart</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles._pay_button}>
+                    <Text style={styles._pay_button_text}>
+                      Add to wish list{" "}
+                    </Text>
+                  </TouchableOpacity>
                 </View>
                 <View style={styles._card_third_column}>
                   <TouchableOpacity style={styles.__interested_button}>
-                  <Entypo name="heart-outlined" size={24} color="white" />
+                    <Entypo name="heart-outlined" size={24} color="white" />
                   </TouchableOpacity>
                 </View>
-
-                
               </View>
-
             </View>
           </View>
         </ScrollView>
@@ -176,15 +185,14 @@ const styles = StyleSheet.create({
   _decrease_btn: {
     backgroundColor: "white",
     width: "20%",
-    borderColor:"#707070",
-    borderWidth:1,
-    borderRadius:5,
-    alignItems:"center",
-    justifyContent:"center"
+    borderColor: "#707070",
+    borderWidth: 1,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
   },
   DecreaseTxt: {
     color: "black",
-    
   },
   IncreaseTxt: {
     color: "black",
@@ -192,13 +200,13 @@ const styles = StyleSheet.create({
   totalNumberofProductTxt: {
     width: "47%",
     backgroundColor: "white",
-    borderColor:"#707070",
-    borderWidth:1,
-    borderRadius:5,
-    alignItems:"center",
-    justifyContent:"center",
-    color:"black",
-    textAlign:"center"
+    borderColor: "#707070",
+    borderWidth: 1,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+    color: "black",
+    textAlign: "center",
   },
   minimumView: {
     display: "flex",
@@ -216,17 +224,17 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     borderRadius: 10,
     padding: 10,
-    paddingBottom:20,
-    elevation:8
+    paddingBottom: 20,
+    elevation: 8,
   },
   _card_first_column: {
-    width: "20%"
+    width: "20%",
   },
   _card_secont_column: {
-    width: "60%"
+    width: "60%",
   },
   _card_third_column: {
-    width: "20%"
+    width: "20%",
   },
   card_img: {
     width: 130,
@@ -241,36 +249,36 @@ const styles = StyleSheet.create({
     textAlign: "center",
     width: "100%",
     alignSelf: "center",
-    marginTop: 30
+    marginTop: 30,
   },
   _price: {
     color: "white",
     fontSize: 18,
     textAlign: "center",
     fontWeight: "bold",
-    marginTop: 10
+    marginTop: 10,
   },
   _pay_button: {
     backgroundColor: "#F7931E",
     borderRadius: 5,
     paddingBottom: 8,
     paddingTop: 5,
-    marginTop:20
+    marginTop: 20,
   },
   _pay_button_text: {
     color: "white",
     fontSize: 16,
     textAlign: "center",
   },
-  __interested_button:{
-    backgroundColor:"#008080",
-    width:36,
-    height:36,
-    borderRadius:36/2,
-    alignItems:"center",
-    justifyContent:"center",
-    elevation:8,
+  __interested_button: {
+    backgroundColor: "#008080",
+    width: 36,
+    height: 36,
+    borderRadius: 36 / 2,
+    alignItems: "center",
+    justifyContent: "center",
+    elevation: 8,
     marginTop: 20,
-  }
+  },
 });
 export default PokemanSword;

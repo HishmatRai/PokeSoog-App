@@ -5,7 +5,6 @@ import {
   ImageBackground,
   TouchableOpacity,
   ScrollView,
-  Image,
   StatusBar,
   Text,
   Dimensions,
@@ -111,7 +110,7 @@ const CreditCard = (props) => {
                   <View style={styles._date_input}>
                     <Text style={styles._input_heading}>Security Code</Text>
                     <TextInput
-                    placeholder="CVV"
+                      placeholder="CVV"
                       value={code}
                       onChangeText={(code) => setCode(code)}
                       style={styles._input}
@@ -123,10 +122,13 @@ const CreditCard = (props) => {
                 </View>
               </View>
 
-               {/* bbutton */}
-               <TouchableOpacity style={styles._pay_button} onPress={() => props.navigation.navigate("OrderConfirmed")}>
-                  <Text style={styles._pay_button_text}>Pay and Proceed</Text>
-                </TouchableOpacity>
+              {/* bbutton */}
+              <TouchableOpacity
+                style={styles._pay_button}
+                onPress={() => props.navigation.navigate("OrderConfirmed")}
+              >
+                <Text style={styles._pay_button_text}>Pay and Proceed</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
@@ -193,20 +195,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 20,
   },
-  _date_code_main:{
-      flexDirection:"row",
-      alignItems:"center",
-      justifyContent:"space-between"
+  _date_code_main: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
-  _date_input:{
-      width:"40%"
+  _date_input: {
+    width: "40%",
   },
   _pay_button: {
     backgroundColor: "#F7931E",
     borderRadius: 5,
     paddingBottom: 8,
     paddingTop: 5,
-    marginTop:50
+    marginTop: 50,
   },
   _pay_button_text: {
     color: "white",

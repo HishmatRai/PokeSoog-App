@@ -56,7 +56,10 @@ const DragonBall = (props) => {
               {/* Card  */}
               <View style={styles._Card_main}>
                 <View style={styles._card}>
-                  <TouchableOpacity style={styles._card_column} onPress={() => props.navigation.navigate("Packs")}>
+                  <TouchableOpacity
+                    style={styles._card_column}
+                    onPress={() => props.navigation.navigate("Packs")}
+                  >
                     <Image
                       source={require("./../../img/Pokemon-Trading-Card-Game-Sword-and-Shield-Sleeved-Booster-Pack.jpg")}
                       style={styles._card_image}
